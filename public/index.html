@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Troca tudo</title>
+    <title>Troca Tudo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
         <!-- Coluna esquerda: Avatar e informações do usuário -->
         <div class="coluna-esquerda">
-            <img id="user-avatar" src="/troca-tudo/avatars/avatar1.jpg" alt="Avatar Padrão">
+            <img id="user-avatar" src="/assets/avatars/default-avatar.jpg" alt="Avatar Padrão">
             <h3 id="user-name">Usuário não logado</h3>
             
             <!-- Bloco de Curtidas e Descurtidas com imagens -->
@@ -52,17 +52,57 @@
         </div>
     </div>
 
-    <!-- Modal de login -->
+    <!-- Modal de Login -->
     <div id="login-modal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content login-modal">
             <span class="close" onclick="fecharModal()">&times;</span>
             <h2>Login</h2>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="senha" placeholder="Senha" required>
-            <button id="login-submit" onclick="fazerLogin()">Entrar</button>
+
+            <!-- Campos de email e senha -->
+            <div class="login-campos">
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="password" id="senha" placeholder="Senha" required>
+            </div>
+
+            <!-- Botão de login -->
+            <div class="login-botoes">
+                <button id="login-submit" onclick="fazerLogin()">Entrar</button>
+            </div>
+
+            <!-- Mensagem de erro -->
             <p id="login-error" style="color: red;"></p>
         </div>
     </div>
+
+   
+
+    <!-- Modal de Comentário -->
+    <div id="comentario-modal" class="modal">
+        <div class="modal-content comentario-modal">
+            <span class="close" onclick="fecharComentarioModal()">&times;</span>
+            <h2>Comentário</h2>
+            
+            <!-- Caixa de texto para comentário -->
+            <textarea id="comentario-texto" rows="4" placeholder="Digite seu comentário"></textarea>
+            
+            <!-- Inputs de cidade e estado alinhados lado a lado -->
+            <div class="comentario-localizacao">
+                <input type="text" id="cidade" placeholder="Cidade">
+                <input type="text" id="estado" placeholder="Estado">
+            </div>
+            
+            <!-- Botões de ação -->
+            <div class="comentario-botoes">
+                <button onclick="adicionarOuEditarComentario()">Salvar</button>
+                <button onclick="excluirComentario()">Excluir</button>
+            </div>
+
+            <!-- Mensagem de erro ou status -->
+            <p id="comentario-mensagem" style="color: red;"></p>
+        </div>
+    </div>
+
+
 
 
     <footer>
@@ -89,36 +129,6 @@
     </footer>
 
 
-    <script src="js/app.js"></script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-</footer> 
-
-    
+    <script src="/public/app.js"></script>
 </body>
 </html>
